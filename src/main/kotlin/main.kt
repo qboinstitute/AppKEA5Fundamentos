@@ -28,12 +28,35 @@ fun main(args: Array<String>) {
     //imprimirMensaje(validarNumero(19))
     //busquedaOrdenamiento()
     //imprimirMensaje(calcularNumero.toString())
-    val objAlumno = Alumno("Karen")
+    /*val objAlumno = Alumno("Karen")
     objAlumno.responsabilidad()
     val objProfesor = Profesor("Julio")
-    objProfesor.responsabilidad()
-
+    objProfesor.responsabilidad()*/
+    //claseAnidadaInterna()
+    objetosDataClass()
 }
+fun objetosDataClass(){
+    val objAuto1 = Auto("Toyota",
+        "Sedan", 2019, "HSYE232432D")
+    val objAuto2 = objAuto1.copy(marca = "Kia")
+    //imprimirMensaje(objAuto2.toString())
+    if(objAuto1 == objAuto2){
+        imprimirMensaje("Si son iguales")
+    }else{
+        imprimirMensaje("No son iguales")
+    }
+}
+
+
+
+
+fun claseAnidadaInterna(){
+    val objFloresAnidada = Flores.claseAnidada()
+    //imprimirMensaje(objFloresAnidada.saludoClaseAnidada("Luis"))
+    val objFloresInterna = Flores().claseInterna()
+    imprimirMensaje(objFloresInterna.saludoClaseInterna("Maicol"))
+}
+
 val calcularNumero = {num: Int -> num * 3}
 
 fun busquedaOrdenamiento(){
