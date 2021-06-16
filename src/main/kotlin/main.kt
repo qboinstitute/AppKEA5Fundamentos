@@ -25,8 +25,53 @@ fun main(args: Array<String>) {
     paises.add("Perú")
     //obtenerLongitudApellido("Salvatierra", "Salvatierra")
     //validarLongitudNombre("Priscila")
-    imprimirMensaje(validarNumero(19))
+    //imprimirMensaje(validarNumero(19))
+    //busquedaOrdenamiento()
+    //imprimirMensaje(calcularNumero.toString())
+    val objAlumno = Alumno("Karen")
+    objAlumno.responsabilidad()
+    val objProfesor = Profesor("Julio")
+    objProfesor.responsabilidad()
+
 }
+val calcularNumero = {num: Int -> num * 3}
+
+fun busquedaOrdenamiento(){
+    for(i in 1..4){
+        for(j in 1..4){
+            if(i == 2 && j == 2){
+                imprimirMensaje("Ambas variables son IGUALES")
+                break
+            }else{
+                imprimirMensaje("valor i= $i - j= $j")
+            }
+        }
+    }
+}
+
+fun bucleWhile(){
+    var contador = 10
+    /*while (contador > 0){
+        imprimirMensaje("Número $contador")
+        contador--
+    }*/
+    do {
+        imprimirMensaje("Número $contador")
+        contador--
+    }while (contador > 0)
+}
+
+fun bucleFor(){
+    val edades = intArrayOf(24, 26,34,39,45)
+    /*for(edad:Int in edades){
+        imprimirMensaje(edad.toString())
+    }
+    for((indice, valor) in edades.withIndex()){
+        imprimirMensaje("Edad $indice - $valor")
+    }*/
+    for(i in 5..15) imprimirMensaje("Número $i")
+}
+
 fun validarLongitudNombre(nombre: String){
     when(nombre.length){
         0 -> print("Nombe vacio")
@@ -35,18 +80,17 @@ fun validarLongitudNombre(nombre: String){
         else -> print("Nombre extenso")
     }
 }
+
 fun validarNumero(numero: Int): String {
     return when (numero % 2) {
         0 -> "Número par"
         else -> "Número impar"
     }
 }
+
 fun imprimirMensaje(mensaje: String) {
     println(mensaje)
 }
-
-
-
 
 fun obtenerLongitudApellido(apellido1: String,
                             apellido2:String){
